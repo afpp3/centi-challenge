@@ -66,7 +66,10 @@ $ npm run dev
 $ acesse a url http://localhost:5173 no seu navegador para visualizar o projeto localmente
 
 ```
-
+#### OBS
+- O arquivo .env foi deixado para facilitar na hora de executar o projeto, apesar de não ser recomendado;
+- A api do IMGUR provavelmente limite o acesso usando localhost como endereço, tente usar o Ip da sua rede + a porta (exemplo: http://192.168.0.1:5173);
+ 	
 ---
 
 ## 🛠 Tecnologias
