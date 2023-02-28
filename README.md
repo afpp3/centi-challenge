@@ -7,7 +7,7 @@
 
   <img alt="Repository size" src="https://img.shields.io/github/repo-size/afpp3/centi-challenge">
 
-  <a href="https://github.com/afpp3/centi-challenge/commits/master">
+  <a href="https://github.com/afpp3/centi-challenge/commits/main">
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/afpp3/centi-challenge">
   </a>
 
@@ -38,7 +38,7 @@ Clique no botão abaixo para para visualizar o resultado do projeto no ar.
 
 [![Deploy with Vercel](https://vercel.com/button)](https://centi-challenge.vercel.app/)
 
-## 🚀 Como executar o projeto
+## 🚀 Como executar o projeto localmente
 
 ### Pré-requisitos:
 
