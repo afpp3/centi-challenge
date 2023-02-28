@@ -1,10 +1,10 @@
 import { Image } from '../pages/queries'
 
-type ImageWrapperProps = {
+type ImageContainerProps = {
   image: Image
 }
 
-export const ImageWrapper = ({ image }: ImageWrapperProps) => {
+export const ImageContainer = ({ image }: ImageContainerProps) => {
   return (
     <div className="max-w-sm h-72 overflow-hidden relative">
       <img

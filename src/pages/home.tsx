@@ -1,15 +1,19 @@
 import { ChangeEvent } from 'react'
-import { ImageWrapper } from '../components/ImageWrapper'
-import { VideoWrapper } from '../components/VideoWrapper'
+import { ImageContainer } from '../components/image-container'
+import { Select } from '../components/select'
+import { VideoContainer } from '../components/video-container'
+
 import {
   changeSection,
   changeSort,
   changeWindow,
-  selectFilter
+  SectionType,
+  selectFilter,
+  SortType,
+  WindowType
 } from '../store/features/filterSlice'
 import { useAppDispatch, useAppSelector } from '../store/hooks'
 import { useGallery } from './queries'
-import { Select } from './select'
 
 export function Home() {
   const gallery = useGallery()
@@ -22,20 +26,19 @@ export function Home() {
     const selectType = e.target.name
 
     if (selectType === 'section') {
-      dispatch(changeSection(value))
+      dispatch(changeSection(value as SectionType))
     }
 
     if (selectType === 'sort') {
-      dispatch(changeSort(value))
+      dispatch(changeSort(value as SortType))
     }
 
     if (selectType === 'window') {
-      dispatch(changeWindow(value))
+      dispatch(changeWindow(value as WindowType))
     }
   }
 
   if (gallery.isLoading) return <div>Carregando</div>
-  console.log(gallery.data)
 
   return (
     <div className="p-8">
@@ -73,7 +76,7 @@ export function Home() {
           onChange={handleChangeFilters}
           options={[
             { value: 'viral', label: 'Viral' },
-            { value: 'topk', label: 'Top' },
+            { value: 'top', label: 'Top' },
             { value: 'time', label: 'Time' },
             { value: 'rising', label: 'Rising' }
           ]}
@@ -83,9 +86,9 @@ export function Home() {
         {gallery?.data?.map((item) =>
           item?.images?.map((image) =>
             image.type.includes('image') ? (
-              <ImageWrapper key={image.id} image={image} />
+              <ImageContainer key={image.id} image={image} />
             ) : (
-              <VideoWrapper key={image.id} image={image} />
+              <VideoContainer key={image.id} image={image} />
             )
           )
         )}

@@ -1,11 +1,15 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { RootState } from '../store'
 
+export type SectionType = 'hot' | 'top' | 'user'
+export type WindowType = 'day' | 'week' | 'month' | 'year' | 'all'
+export type SortType = 'viral' | 'top' | 'time' | 'rising'
+
 export type FilterState = {
   value: {
-    section: string
-    window: string
-    sort: string
+    section: SectionType
+    window: WindowType
+    sort: SortType
   }
 }
 
@@ -21,13 +25,13 @@ export const filterSlice = createSlice({
   name: 'filter',
   initialState,
   reducers: {
-    changeSection: (state, action: PayloadAction<string>) => {
+    changeSection: (state, action: PayloadAction<SectionType>) => {
       state.value.section = action.payload
     },
-    changeSort: (state, action: PayloadAction<string>) => {
+    changeSort: (state, action: PayloadAction<SortType>) => {
       state.value.sort = action.payload
     },
-    changeWindow: (state, action: PayloadAction<string>) => {
+    changeWindow: (state, action: PayloadAction<WindowType>) => {
       state.value.window = action.payload
     }
   }

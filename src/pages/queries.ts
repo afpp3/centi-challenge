@@ -1,8 +1,12 @@
 import { useQuery } from '@tanstack/react-query'
 import { api } from '../services/http-common'
-import { FilterState, selectFilter } from '../store/features/filterSlice'
+import {
+  SectionType,
+  selectFilter,
+  SortType,
+  WindowType
+} from '../store/features/filterSlice'
 import { useAppSelector } from '../store/hooks'
-import { RootState } from '../store/store'
 
 export type Image = {
   id: string
@@ -47,9 +51,9 @@ type Gallery = {
 }
 
 type Filters = {
-  section: string
-  window: string
-  sort: string
+  section: SectionType
+  window: WindowType
+  sort: SortType
 }
 
 const fetchGallery = async ({

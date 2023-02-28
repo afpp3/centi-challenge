@@ -1,10 +1,10 @@
 import { Image } from '../pages/queries'
 
-type VideoWrapperProps = {
+type VideoContainerProps = {
   image: Image
 }
 
-export const VideoWrapper = ({ image }: VideoWrapperProps) => {
+export const VideoContainer = ({ image }: VideoContainerProps) => {
   return (
     <div key={image.id} className="max-w-sm h-72 overflow-hidden relative">
       <video

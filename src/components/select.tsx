@@ -1,4 +1,9 @@
 import { ChangeEvent } from 'react'
+import {
+  SectionType,
+  SortType,
+  WindowType
+} from '../store/features/filterSlice'
 
 type OptionType = {
   value: string
